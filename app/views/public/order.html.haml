@@ -1,0 +1,69 @@
+.container
+  .main-content
+    .well
+      .row
+        .span12
+          %h2 
+            %center
+              %u Order Form:
+          =label_tag(:firstname, "First Name:") 
+          =text_field_tag(:firstname)
+          =label_tag(:lastname, "Last Name:")
+          =text_field_tag(:lastname)
+          =label_tag(:email, "Contact Email:")
+          =text_field_tag(:email)
+          =label_tag(:phone, "Contact Phone Number:")
+          =text_field_tag(:phone)
+          =label_tag(:street_address, "Street Addess:")
+          =text_field_tag(:street_address)
+          =label_tag(:city, "City:")
+          =text_field_tag(:city)
+          =label_tag(:state, "State:")
+          =text_field_tag(:state)
+          =label_tag(:zip, "Zip Code:")
+          =text_field_tag(:zip)
+          %p Please enter the quantity for each product you would like below. If you do not want a product please leave the box blank.
+      .row
+        .span3
+          %p
+            %u Beef:
+            %br
+            =text_field_tag(:whole_beef, "Qty")
+            %br
+            =text_field_tag(:half_beef, "Qty")
+            %br
+            =text_field_tag(:quarter_beef, "Qty")
+        .span3
+          %p
+            %u Pork/Hogs:
+            %br
+            =text_field_tag(:BBQ_pig, "Qty")
+            %br
+            =text_field_tag(:half_pig, "Qty")
+            %br
+            =text_field_tag(:whole_pig, "Qty")
+        .span3
+          %p 
+            %u Chickens:
+            %br 
+            =text_field_tag(:chickens, "Qty")
+            %br
+            %u Lamb:
+            %br
+            =text_field_tag(:lamb, "Qty")
+        .span3
+      .row
+        .span12
+          %p 
+            %u BBQ Pit Rental:
+            %br
+            =check_box_tag(:BBQ_pit_rental) 
+            I would like to rent the BBQ Pit for my event for $100 (holds up to a 150lb hog)
+          %p
+            %u Other:
+            %br
+            If you have any special requests or instructions please enter them here:
+            %br
+            =text_area_tag(:requests)
+          %p
+            =submit_tag('Submit Order')

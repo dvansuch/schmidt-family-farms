@@ -47,3 +47,15 @@ end
 
 # Small DB information dump
 gem 'rake_db_dump'
+
+#utlizes bootstrap without having to download it myself
+gem 'bootstrap-sass'
+
+#this pushes and pull db's on heroku
+#gem 'taps' 
+
+#serve production assets
+gem 'rails_12factor'
+
+#installs haml for rails usage
+gem 'haml-rails'

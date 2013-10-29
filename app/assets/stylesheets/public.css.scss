@@ -1,0 +1,63 @@
+// Place all the styles related to the Public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image:url('Paper_texture.jpg');
+  background-repeat:no-repeat;
+  background-position:center top;
+}
+
+.main-content {
+  padding: 15px;
+}
+
+.header-top {
+  background-image:url('red_header.png');
+  background-repeat:yes;
+}
+.header-banner {
+  background-image:url('redwoodbarn.png');
+  background-repeat:yes;
+  color:#ffffaa;
+  font-size: 50px;
+}
+
+hr.one {
+  border-color:#000000;
+}
+
+img.pic {
+  border:10px solid #ffffff;
+}
+
+.navbar-inner {
+  background-image: -moz-linear-gradient(top, #990000, #660000);
+  background-image: -ms-linear-gradient(top, #990000, #660000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#990000), to(#660000));
+  background-image: -webkit-linear-gradient(top, #990000, #660000);
+  background-image: -o-linear-gradient(top, #990000, #660000);
+  background-image: linear-gradient(top, #990000, #660000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'990000, endColorstr='#'660000, GradientType=0);
+}
+
+.navbar .brand {
+  padding: 8px 20px 12px;
+  font-size: 20px;
+  color: #ffffaa;
+}
+
+.navbar .divider-vertical {
+  height: 0px;
+}
+
+.navbar .nav > li > a {
+  padding: 10px 10px 11px;
+  font-size: 14px;
+  color: #ffffaa;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #ffaa56;
+}
