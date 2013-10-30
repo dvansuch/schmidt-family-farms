@@ -1,59 +1,103 @@
 .container
-  .main-content
-    .well
-      .row
-        .span12
-          %h2 
-            %center
-              %u Order Form:
-          =label_tag(:firstname, "First Name:") 
-          =text_field_tag(:firstname)
-          =label_tag(:lastname, "Last Name:")
-          =text_field_tag(:lastname)
-          =label_tag(:email, "Contact Email:")
-          =text_field_tag(:email)
-          =label_tag(:phone, "Contact Phone Number:")
-          =text_field_tag(:phone)
-          =label_tag(:street_address, "Street Addess:")
-          =text_field_tag(:street_address)
-          =label_tag(:city, "City:")
-          =text_field_tag(:city)
-          =label_tag(:state, "State:")
-          =text_field_tag(:state)
-          =label_tag(:zip, "Zip Code:")
-          =text_field_tag(:zip)
+  .row-fluid
+    .span12
+      .main-content
+      %h2 
+        %center
+          %u Order Form:
+  .order-form
+    .row-fluid
+      .span6
+        .main-content
+          %form{:class=>'form-horizontal'}
+            .control-group
+              =label_tag(:firstname, "First Name:", :class=>'control-label') 
+              .controls
+                =text_field_tag(:firstname)
+            .control-group
+              =label_tag(:lastname, "Last Name:", :class=>'control-label')
+              .controls
+                =text_field_tag(:lastname)
+            .control-group
+              =label_tag(:email, "Contact Email:", :class=>'control-label')
+              .controls
+                =text_field_tag(:email)
+            .control-group
+              =label_tag(:phone, "Contact Phone Number:", :class=>'control-label')
+              .controls
+                =text_field_tag(:phone)
+            .control-group
+              =label_tag(:street_address, "Street Addess:", :class=>'control-label')
+              .controls
+                =text_field_tag(:street_address)
+            .control-group
+              =label_tag(:city, "City:", :class=>'control-label')
+              .controls
+                =text_field_tag(:city)
+            .control-group
+              =label_tag(:state, "State:", :class=>'control-label')
+              .controls
+                =text_field_tag(:state)
+            .control-group
+              =label_tag(:zip, "Zip Code:", :class=>'control-label')
+              .controls
+                =text_field_tag(:zip)
+    .row-fluid
+      .span12
+        .main-content
+          %hr{:class=>'one'}
           %p Please enter the quantity for each product you would like below. If you do not want a product please leave the box blank.
-      .row
-        .span3
+    .row-fluid
+      .span4
+        .main-content
           %p
             %u Beef:
-            %br
-            =text_field_tag(:whole_beef, "Qty")
-            %br
-            =text_field_tag(:half_beef, "Qty")
-            %br
-            =text_field_tag(:quarter_beef, "Qty")
-        .span3
+            %form{:class=>'form-horizontal'}
+            .control-group
+              =label_tag(:whole_beef, "Whole Beef:", :class=>'control-label')
+              .controls
+                =text_field_tag(:whole_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =label_tag(:half_beef, "Half Beef:", :class=>'control-label')
+              .controls
+                =text_field_tag(:half_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =label_tag(:quarter_beef, "Quarter Beef:", :class=>'control-label')
+              .controls
+                =text_field_tag(:quarter_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+      .span4
+        .main-content
           %p
             %u Pork/Hogs:
-            %br
-            =text_field_tag(:BBQ_pig, "Qty")
-            %br
-            =text_field_tag(:half_pig, "Qty")
-            %br
-            =text_field_tag(:whole_pig, "Qty")
-        .span3
+            .control-group
+              =label_tag(:BBQ_pig, "BBQ Pig:", :class=>'control-label')
+              .controls
+                =text_field_tag(:BBQ_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =label_tag(:half_pig, "Whole Beef:", :class=>'control-label')
+              .controls
+                =text_field_tag(:half_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =label_tag(:whole_pig, "Whole Pig:", :class=>'control-label')
+              .controls
+                =text_field_tag(:whole_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+      .span4
+        .main-content
           %p 
             %u Chickens:
-            %br 
-            =text_field_tag(:chickens, "Qty")
-            %br
+            .control-group
+              =label_tag(:chickens, "Live Chickens:", :class=>'control-label')
+              .controls
+                =text_field_tag(:chickens, "Qty", :class=>'input-mini', :maxlength=>2)
+          %p
             %u Lamb:
-            %br
-            =text_field_tag(:lamb, "Qty")
-        .span3
-      .row
-        .span12
+            .control-group
+              =label_tag(:lamb, "Lamb:", :class=>'control-label')
+              .controls
+                =text_field_tag(:lamb, "Qty", :class=>'input-mini', :maxlength=>2)
+    .row-fluid
+      .span12
+        .main-content
           %p 
             %u BBQ Pit Rental:
             %br
@@ -66,4 +110,4 @@
             %br
             =text_area_tag(:requests)
           %p
-            =submit_tag('Submit Order')
+            %center=submit_tag('Submit Order', :class=>'btn-danger')

@@ -8,17 +8,15 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
+    <div class="row-fluid">
       <div class="span12 header-top">
-        <%= image_tag('red_header.png') %>
       </div>
     </div>
     <div class="header-banner">
-      <div class="row">
-        <div class="span1">
-        </div>
-        <div class="span11">
-          <%= image_tag('logo1.png', alt: "SchmidtFamilyFarms") %> <b>Schmidt Family Farms</b>
+      <div class="row-fluid">
+        <div class="span11 offset1">
+          <%= image_tag('logo1.png', alt: "SchmidtFamilyFarms") %>
+          <b>Schmidt Family Farms</b>        
         </div>
       </div>
     </div>
@@ -28,17 +26,24 @@
       <div class="navbar">
         <div class="navbar-inner">
           <a class="brand" href="/">Schmidt Family Farms</a>
-          <ul class="nav">
+          <ul class="nav navbar-nav">
             <li><a href="/index">Home</a>
             <li><a href="/about">About Us</a>
-            <li><a href="/products">Products</a>
+            <li class="dropdown">
+              <a href="/products" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/products/beef">Beef</a>
+                <li><a href="/products/pork">Pork/Hogs</a>
+                <li><a href="/products/chicken">Chickens</a>
+                <li><a href="/products/lamb">Lamb</a>
+                </ul>
             <li><a href="/services">Services</a>
             <li><a href="/order">Order</a>
             <li><a href="/news">News</a>
             <li><a href="/faq">FAQ</a>
             <li><a href="/contact">Contact Us</a>
           </ul>
-          <ul class="nav navbar-right">
+          <ul class="nav navbar-nav pull-right">
             <li><a href="/admin_login">Login</a>
           </ul>
         </div>

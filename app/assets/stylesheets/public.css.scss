@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-image:url('Paper_texture.jpg');
+  background-image:url('Paper_texture.png');
   background-repeat:no-repeat;
   background-position:center top;
+  background-color:#f9f1e4;
 }
 
 .main-content {
@@ -14,6 +15,7 @@ body {
 .header-top {
   background-image:url('red_header.png');
   background-repeat:yes;
+  height: 43px;
 }
 .header-banner {
   background-image:url('redwoodbarn.png');
@@ -21,6 +23,7 @@ body {
   color:#ffffaa;
   font-size: 50px;
 }
+
 
 hr.one {
   border-color:#000000;
@@ -56,8 +59,10 @@ img.pic {
   color: #ffffaa;
 }
 
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
-  color: #ffaa56;
+div.navbar div.navbar-inner ul.nav a:hover {
+    color: #fff !important; 
+}
+
+.order-form {
+  border:3px dashed;
 }

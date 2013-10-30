@@ -1,5 +1,5 @@
 .container 
-  .row
+  .row-fluid
     .span6 
       .main-content
         %h2
@@ -13,10 +13,12 @@
     .span6
       .main-content
         %p
-          %center=image_tag('cowsample.jpg')
-  .row
+          %center=image_tag('cow.png', :class=>'pic')
+  .row-fluid
     .span6
       .main-content
+        %p
+          %center=image_tag('bacon.jpg', :class=>'pic')
     .span6
       .main-content
         %h2
