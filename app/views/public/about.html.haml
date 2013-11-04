@@ -5,7 +5,17 @@
         %h2
           %center
             %u About Schmidt Family Farms
-        %p We are a small family farm located in the prairies of Colorado. We raise quality natural beef, crossbred hogs, and lamb.
-        %p My daughters and I work hard to bring natural hormone free and steroid free meats to our your table.  We humbly offer the highest quality gourmet beef and pork without the high gourmet cost, direct to you! We delivery from Denver to Colorado Springs, and are happy to answer your questions and emails any time. 
-        %p Our commitment to quality includes: no hormones, no fillers, and no steroids.
-        %p You can visit us on Facebook, Online, or at our farm located in Bennett, Colorado.
+        .media
+          =image_tag('view_from_farm_sm.png', :class=>'pic pull-right')
+          .media-body
+            %p.lead We are a small family farm located in the prairies of Colorado. We raise quality natural beef, crossbred hogs, lamb and chickens.
+            %br My daughters and I work hard to bring natural hormone free and steroid free meats to our your table.  We humbly offer the highest quality gourmet beef, pork, lamb and chickens without the high gourmet cost, direct to you! We delivery from Denver to Colorado Springs, and are happy to answer your questions and emails any time. 
+            %br Our commitment to quality includes: no hormones, no fillers, and no steroids.
+            %br
+            You can also visit us at 
+            =link_to("Facebook", "https://www.facebook.com/SchmidtFamilyFarmsCo")
+              
+            or at our farm located in Bennett, Colorado. More information is available on the
+            %a(href="/contact")
+              contact us 
+            page.

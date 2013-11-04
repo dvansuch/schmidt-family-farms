@@ -42,6 +42,7 @@
               =label_tag(:zip, "Zip Code:", :class=>'control-label')
               .controls
                 =text_field_tag(:zip)
+      .span6
     .row-fluid
       .span12
         .main-content
@@ -56,15 +57,15 @@
             .control-group
               =label_tag(:whole_beef, "Whole Beef:", :class=>'control-label')
               .controls
-                =text_field_tag(:whole_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:whole_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
             .control-group
               =label_tag(:half_beef, "Half Beef:", :class=>'control-label')
               .controls
-                =text_field_tag(:half_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:half_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
             .control-group
               =label_tag(:quarter_beef, "Quarter Beef:", :class=>'control-label')
               .controls
-                =text_field_tag(:quarter_beef, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:quarter_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
       .span4
         .main-content
           %p
@@ -72,15 +73,15 @@
             .control-group
               =label_tag(:BBQ_pig, "BBQ Pig:", :class=>'control-label')
               .controls
-                =text_field_tag(:BBQ_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:BBQ_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
             .control-group
-              =label_tag(:half_pig, "Whole Beef:", :class=>'control-label')
+              =label_tag(:half_pig, "Half Hog:", :class=>'control-label')
               .controls
-                =text_field_tag(:half_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:half_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
             .control-group
-              =label_tag(:whole_pig, "Whole Pig:", :class=>'control-label')
+              =label_tag(:whole_pig, "Whole Hog:", :class=>'control-label')
               .controls
-                =text_field_tag(:whole_pig, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:whole_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
       .span4
         .main-content
           %p 
@@ -88,13 +89,13 @@
             .control-group
               =label_tag(:chickens, "Live Chickens:", :class=>'control-label')
               .controls
-                =text_field_tag(:chickens, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:chickens, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
           %p
             %u Lamb:
             .control-group
               =label_tag(:lamb, "Lamb:", :class=>'control-label')
               .controls
-                =text_field_tag(:lamb, "Qty", :class=>'input-mini', :maxlength=>2)
+                =text_field_tag(:lamb, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
     .row-fluid
       .span12
         .main-content

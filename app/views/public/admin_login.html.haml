@@ -1,4 +1,17 @@
 .container
   .row
-    .span12
+    .span5.offset3
       .main-content
+        %center
+          %h3
+            %u Login
+          %form{:class=>'form-horizontal'}
+            .control-group
+              =label_tag(:username, "Username:", :class=>'control-label') 
+              .controls
+                =text_field_tag(:username)
+            .control-group
+              =label_tag(:lastname, "Password:", :class=>'control-label')
+              .controls
+                =text_field_tag(:password)
+          %p=submit_tag('Login', :class=>'btn-danger')
