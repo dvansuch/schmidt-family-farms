@@ -1,5 +1,5 @@
 .container
-  .row
+  .row-fluid
     .span12
       .main-content
         %h3
@@ -7,45 +7,82 @@
             %u Frequently Asked Questions
         %p
           %ul
-            %li What is Natural Beef?
-            %li Do you have grass fed AND grain finished beef?
-            %li Do you have grass fed AND grass finished beef?
-            %li What is hanging weight?
-            %li What type of cattle do you have?
-            %li What type of hogs do you have?
-            %li Do you deliver?
+            %li
+              %a(href='#most_popular') What is your most popular beef order?
+            %li 
+              %a(href='#natural_beef') What is Natural Beef?
+            %li 
+              %a(href='#grain_finished') Are your beef grain finished beef?
+            %li 
+              %a(href='#grass_finished') Do you have grass fed and grass finished beef?
+            %li 
+              %a(href='#hanging_weight') What is hanging weight?
+            %li
+              %a(href='#how_much_beef') How much beef should I expect to get? 
+            %li 
+              %a(href='#type_cattle') What type of cattle do you have?
+            %li 
+              %a(href='#type_hogs') What type of hogs do you have?
+            %li
+              %a(href='#what_happens_order') What happens after I place my order?
+            %li
+              %a(href='#butcher') Do I have to use a certain butcher to process my meat? 
+            %li
+              %a(href='#how_long') How long after ordering will it take to fill my order?
+            %li 
+              %a(href='#deliver') Do you deliver?
         %hr.one
         .media
           .media-body
-            %h4{:class=> 'media-heading'}What is Natural Beef?
+            %h4{:class=> 'media-heading', :id=> 'most_popular'} What is your most popular beef order?
+            %p Our most popular order is our grass fed and grain finished, all-natural beef.  This finishing process provides the delicious marbling and juicy tenderness found in our meat without adding any fillers. Our beef is never injected with hormones or steroids even during the finishing process. 
+        .media
+          .media-body
+            %h4{:class=> 'media-heading', :id=> 'natural_beef'} What is Natural Beef?
             %p Natural beef means our cows are grass fed and grain finished.  They are not force fed in small pens. Instead they spend most of their days in the pastures and eat when they are hungry. They are not given any steroid or hormone shots.
         .media
           .media-body
-            %h4{:class=> 'media-heading'} Do you have grass fed and grain finished beef?
-            %p Our most popular order is our grass fed and grain finished, all-natural beef.  We do not force feed our cattle, instead the cows to choose when to eat the grain provided. This finishing process provides the delicious marbling found in our meat. Our beef is never injected with hormones or steroids even during the finishing process.   
+            %h4{:class=> 'media-heading', :id=> 'grain_finished'} Are your beef grain finished beef?
+            %p Yes, our beef are grass fed and grain finished, all-natural beef.  We do not force feed our cattle, instead the cows to choose when to eat the grain provided. This finishing process provides the delicious marbling and juicy tenderness found in our meat without adding any fillers. Our beef is never injected with hormones or steroids even during the finishing process.   
         .media
           .media-body
-            %h4{:class=> 'media-heading'} Do you have grass fed AND finished beef?
+            %h4{:class=> 'media-heading', :id=> 'grass_finished'} Do you have grass fed and grass finished beef?
             %p Yes, upon request we can provide grass fed and finished beef.  Please keep in mind that grass finished beef may require special attention while cooking. Please see our 
             %a(href='/products/beef') 
               Beef 
             page and our 
-            %a(href='/recipes')
-              Recipe 
+            %a(href='/cooking')
+              Cooking Tips 
             page for more information.
         .media
           .media-body
-            %h4{:class=> 'media-heading'} What is hanging weight?
-            %p Hanging weight is the weight of the animal without the unusable parts. That is to say, its the weight of the animal without the head, skin, feet and internal organs. Usually the product price is based off of this weight. 
+            %h4{:class=> 'media-heading', :id=>'hanging_weight'} What is hanging weight?
+            %p Hanging weight is the weight of the animal without the unusable parts. That is to say, its the weight of the animal without the head, skin, feet and internal organs. The product price is based off of this weight.
         .media
           .media-body
-            %h4{:class=> 'media-heading'} What type of cattle do you have? 
+            %h4{:class=> 'media-heading', :id=>'how_much_beef'} How much beef should I expect to get?
+            %p We estimate you will recieve approximately 60% of the hanging weight in meat. The other 40% are the bones and tendons the butcher removes when processing. The cuts of meat you request from the butcher will also have an effect on how much meat you recieve as steaks weigh more than hamburgers, etc. 
+        .media
+          .media-body
+            %h4{:class=> 'media-heading', :id=> 'type_cattle'} What type of cattle do you have? 
             %p Our herd consists of several types of cattle, including but not limited to red and black angus, hereford, and angus cross cattle. 
         .media
           .media-body
-            %h4{:class=> 'media-heading'} What type of hogs do you have? 
+            %h4{:class=> 'media-heading', :id=> 'type_hogs'} What type of hogs do you have? 
             %p Our herd consists of several types of hogs including but not limited to yorkshire, bluebutts, red and black hampshire, hereford cross, duroc and berkshire.
         .media
           .media-body
-            %h4{:class=> 'media-heading'} Do you deliver? 
+            %h4{:class=> 'media-heading', :id=> 'what_happens_order'} What happens after I place my order?
+            %p After you place an order you will be contacted regarding your payment options and the approximate length of time it will take to fulfill your order within 48 hours. 
+        .media
+          .media-body
+            %h4{:class=> 'media-heading', :id=> 'butcher'} Do I have to use a certain butcher to process my meat? 
+            %p No, you can use whichever butcher you want.  We work with our local butchers to ensure that your meat is as natural and unprocessed as it can be to ensure high quality.  If you have a different butcher you prefer we can make arrangements to get your order there. 
+        .media
+          .media-body
+            %h4{:class=> 'media-heading', :id=> 'how_long'} How long after ordering will it take to fill my order?
+            %p Because our orders get processed through local butchers we can only make a trip to the meat locker twice a month.  This means your order may take anywhere from 2-6 weeks to arrive at the butchers.  Our BBQ hogs take less time because they are processed in-house. We will contact you when your order is ready to be processed at the butchers. 
+        .media
+          .media-body
+            %h4{:class=> 'media-heading', :id=> 'deliver'} Do you deliver? 
             %p We deliver for a small fee on orders of a full cow or more to the Front Range, Denver, and Colorado Springs areas. Pick up of your order may also be done at our farm in Bennett, Colorado by appointment only. You may also pick up your order from your butcher once your account has been settled. 

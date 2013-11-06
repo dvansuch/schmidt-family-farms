@@ -1,4 +1,60 @@
 .container
-  .row
+  .row-fluid
     .span12
       .main-content
+        %h3
+          %u 
+            %center Pork and BBQ Hogs
+        .media
+          =image_tag('pigs_sm.png', :class=>'pic pull-right')
+          .media-body
+            %p.lead Our home grown hogs provide your family with only the best quality pork from our own hog herd. We carry several types of hogs including Duroc's, Red Hampshire, Yorkshire, Hereford and several crossbred hogs. 
+            %h4{:class=>'media-heading'} Pork 
+            %p Our pigs are typically between 180-210lbs hanging weight for processed pork. The butcher will charge separate processing fees after the meat arrives at the butcher. Our price is for the unprocessed meat hanging weight.
+            %h5 We recommend you request the butcher smokes or cures the pork while it is being processed for the best flavor
+          .media-body
+            %center
+              %h4{:class=>'media-heading'} Hog Prices
+            %table{:class=>'table table-condensed table-bordered'}
+              %thead
+                %tr
+                  %th
+                  %th Whole Hog
+                  %th Half Hog
+              %tbody
+                %tr
+                  %th Price Per Pound:
+                  %td $1.40/lb
+                  %td $1.40/lb
+                %tr
+                  %th Approx Hanging Weight*:
+                  %td 180-210 lbs
+                  %td 90-105 lbs
+                %tr
+                  %th Approx Price* Before Butcher:
+                  %td $252-$294
+                  %td $126-$147
+        .media
+          .media-body
+            %h4{:class=>'media-heading'} BBQ Hogs
+            %p Are you having a party or family event? Why not have a BBQ Hog roasting to feed all those hungry friends? Our BBQ Hogs are butchered and cleaned in-house and are hand picked out by the farmer for your event. The price is determined from the live weight of the hog as opposed to our process hogs which are determined by the hanging weight. 
+            %h5 We also rent a BBQ Pit that hold up to a 150lb hog for $100 per half day event.
+  .row-fluid
+    .span5
+      .main-content
+        %table{:class=>'table table-condensed table-bordered'}
+          %thead
+            %tr
+              %th
+              %th BBQ Hog
+          %tbody
+            %tr
+              %th Price Per Pound:
+              %td $1.00/lb live weight
+            %tr
+              %th Approx Total Price*:
+              %td $230-$250
+  .row-fluid
+    .span12
+      .main-content
+        %h5 *All prices are approximate depending on the weight of the hog
