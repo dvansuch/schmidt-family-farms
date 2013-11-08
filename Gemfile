@@ -55,7 +55,7 @@ gem 'bootstrap-sass'
 #gem 'taps' 
 
 #serve production assets
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 #installs haml for rails usage
 gem 'haml-rails'
