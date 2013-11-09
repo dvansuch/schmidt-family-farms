@@ -52,10 +52,10 @@ gem 'rake_db_dump'
 gem 'bootstrap-sass'
 
 #this pushes and pull db's on heroku
-#gem 'taps' 
+gem 'taps' 
 
 #serve production assets
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 #installs haml for rails usage
 gem 'haml-rails'
