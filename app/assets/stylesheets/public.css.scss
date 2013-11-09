@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-image:url('Paper_texture.png');
+  background-image:url(Paper_texture.png);
   background-repeat:no-repeat;
   background-position:center top;
   background-color:#f9f1e4;
@@ -13,12 +13,12 @@ body {
 }
 
 .header-top {
-  background-image:url('red_header.png');
+  background-image:url(red_header.png);
   background-repeat:yes;
   height: 43px;
 }
 .header-banner {
-  background-image:url('redwoodbarn.png');
+  background-image:url(redwoodbarn.png);
   background-repeat:yes;
   color:#ffffaa;
   font-size: 50px;
