@@ -1,0 +1,55 @@
+%h1 Listing customer_orders
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Email
+    %th Phone
+    %th Address
+    %th City
+    %th State
+    %th Zip
+    %th Whole beef
+    %th Integer
+    %th Half beef
+    %th Qtr beef
+    %th Bbq hog
+    %th Half hog
+    %th Whole hog
+    %th Chickens
+    %th Lamb
+    %th Bbq pit
+    %th Comments
+    %th
+    %th
+    %th
+
+  - @customer_orders.each do |customer_order|
+    %tr
+      %td= customer_order.first_name
+      %td= customer_order.last_name
+      %td= customer_order.email
+      %td= customer_order.phone
+      %td= customer_order.address
+      %td= customer_order.city
+      %td= customer_order.state
+      %td= customer_order.zip
+      %td= customer_order.whole_beef
+      %td= customer_order.integer
+      %td= customer_order.half_beef
+      %td= customer_order.qtr_beef
+      %td= customer_order.bbq_hog
+      %td= customer_order.half_hog
+      %td= customer_order.whole_hog
+      %td= customer_order.chickens
+      %td= customer_order.lamb
+      %td= customer_order.bbq_pit
+      %td= customer_order.comments
+      %td= link_to 'Show', customer_order
+      %td= link_to 'Edit', edit_customer_order_path(customer_order)
+      %td= link_to 'Destroy', customer_order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Customer order', new_customer_order_path

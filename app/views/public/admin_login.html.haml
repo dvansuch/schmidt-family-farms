@@ -1,17 +1,18 @@
 .container
-  .row
-    .span5.offset3
+  .row-fluid
+    .span12
       .main-content
         %center
           %h3
             %u Login
-          %form{:class=>'form-horizontal'}
-            .control-group
-              =label_tag(:username, "Username:", :class=>'control-label') 
-              .controls
-                =text_field_tag(:username)
-            .control-group
-              =label_tag(:lastname, "Password:", :class=>'control-label')
-              .controls
-                =text_field_tag(:password)
-          %p=submit_tag('Login', :class=>'btn-danger')
+          =form_tag('/admin_login') do 
+            %form{:class=>'form-horizontal'}
+              .control-group
+                =label_tag(:email, "Email:", :class=>'control-label') 
+                .controls
+                  =text_field_tag(:email)
+              .control-group
+                =label_tag(:password, "Password:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:password)
+              %p=submit_tag('Login', :class=>'btn-danger')

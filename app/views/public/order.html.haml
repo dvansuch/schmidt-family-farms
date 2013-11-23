@@ -1,114 +1,116 @@
-.container
-  .row-fluid
-    .span12
-      .main-content
-      %h2 
-        %center
-          %u Order Form:
-  .order-form
-    .row-fluid
-      .span6
-        .main-content
-          %form{:class=>'form-horizontal'}
-            .control-group
-              =label_tag(:firstname, "First Name:", :class=>'control-label') 
-              .controls
-                =text_field_tag(:firstname)
-            .control-group
-              =label_tag(:lastname, "Last Name:", :class=>'control-label')
-              .controls
-                =text_field_tag(:lastname)
-            .control-group
-              =label_tag(:email, "Contact Email:", :class=>'control-label')
-              .controls
-                =text_field_tag(:email)
-            .control-group
-              =label_tag(:phone, "Contact Phone Number:", :class=>'control-label')
-              .controls
-                =text_field_tag(:phone)
-            .control-group
-              =label_tag(:street_address, "Street Addess:", :class=>'control-label')
-              .controls
-                =text_field_tag(:street_address)
-            .control-group
-              =label_tag(:city, "City:", :class=>'control-label')
-              .controls
-                =text_field_tag(:city)
-            .control-group
-              =label_tag(:state, "State:", :class=>'control-label')
-              .controls
-                =text_field_tag(:state)
-            .control-group
-              =label_tag(:zip, "Zip Code:", :class=>'control-label')
-              .controls
-                =text_field_tag(:zip)
-      .span6
+=form_tag('/order') do
+  .container
     .row-fluid
       .span12
         .main-content
-          %hr{:class=>'one'}
-          %p Please enter the quantity for each product you would like below. If you do not want a product please leave the box blank.
-    .row-fluid
-      .span4
-        .main-content
-          %p
-            %u Beef:
+        %h2 
+          %center
+            %u Order Form:
+    .order-form
+      .row-fluid
+        .span6
+          .main-content
+
             %form{:class=>'form-horizontal'}
-            .control-group
-              =label_tag(:whole_beef, "Whole Beef:", :class=>'control-label')
-              .controls
-                =text_field_tag(:whole_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-            .control-group
-              =label_tag(:half_beef, "Half Beef:", :class=>'control-label')
-              .controls
-                =text_field_tag(:half_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-            .control-group
-              =label_tag(:quarter_beef, "Quarter Beef:", :class=>'control-label')
-              .controls
-                =text_field_tag(:quarter_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-      .span4
-        .main-content
-          %p
-            %u Pork/Hogs:
-            .control-group
-              =label_tag(:BBQ_pig, "BBQ Pig:", :class=>'control-label')
-              .controls
-                =text_field_tag(:BBQ_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-            .control-group
-              =label_tag(:half_pig, "Half Hog:", :class=>'control-label')
-              .controls
-                =text_field_tag(:half_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-            .control-group
-              =label_tag(:whole_pig, "Whole Hog:", :class=>'control-label')
-              .controls
-                =text_field_tag(:whole_pig, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-      .span4
-        .main-content
-          %p 
-            %u Chickens:
-            .control-group
-              =label_tag(:chickens, "Live Chickens:", :class=>'control-label')
-              .controls
-                =text_field_tag(:chickens, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-          %p
-            %u Lamb:
-            .control-group
-              =label_tag(:lamb, "Lamb:", :class=>'control-label')
-              .controls
-                =text_field_tag(:lamb, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
-    .row-fluid
-      .span12
-        .main-content
-          %p 
-            %u BBQ Pit Rental:
-            %br
-            =check_box_tag(:BBQ_pit_rental) 
-            I would like to rent the BBQ Pit for my event for $100 (holds up to a 150lb hog)
-          %p
-            %u Other:
-            %br
-            If you have any special requests or instructions please enter them here:
-            %br
-            =text_area_tag(:requests)
-          %p
-            %center=submit_tag('Submit Order', :class=>'btn-danger')
+              .control-group
+                =label_tag(:first_name, "First Name:", :class=>'control-label') 
+                .controls
+                  =text_field_tag(:first_name)
+              .control-group
+                =label_tag(:last_name, "Last Name:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:last_name)
+              .control-group
+                =label_tag(:email, "Contact Email:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:email)
+              .control-group
+                =label_tag(:phone, "Contact Phone Number:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:phone)
+              .control-group
+                =label_tag(:address, "Street Addess:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:address)
+              .control-group
+                =label_tag(:city, "City:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:city)
+              .control-group
+                =label_tag(:state, "State:", :class=>'control-label')
+                .controls
+                  =select_tag :state, options_for_select(us_states)
+              .control-group
+                =label_tag(:zip, "Zip Code:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:zip)
+        .span6
+      .row-fluid
+        .span12
+          .main-content
+            %hr{:class=>'one'}
+            %p Please enter the quantity for each product you would like below. If you do not want a product please leave the box blank.
+      .row-fluid
+        .span4
+          .main-content
+            %p
+              %u Beef:
+              %form{:class=>'form-horizontal'}
+              .control-group
+                =label_tag(:whole_beef, "Whole Beef:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:whole_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+              .control-group
+                =label_tag(:half_beef, "Half Beef:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:half_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+              .control-group
+                =label_tag(:qtr_beef, "Quarter Beef:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:qtr_beef, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+        .span4
+          .main-content
+            %p
+              %u Pork/Hogs:
+              .control-group
+                =label_tag(:whole_hog, "Whole Hog:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:whole_hog, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+              .control-group
+                =label_tag(:half_hog, "Half Hog:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:half_hog, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+              .control-group
+                =label_tag(:bbq_hog, "BBQ Pig:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:bbq_hog, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+        .span4
+          .main-content
+            %p 
+              %u Chickens:
+              .control-group
+                =label_tag(:chickens, "Live Chickens:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:chickens, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+            %p
+              %u Lamb:
+              .control-group
+                =label_tag(:lamb, "Lamb:", :class=>'control-label')
+                .controls
+                  =text_field_tag(:lamb, nil, :placeholder=>"Qty", :class=>'input-mini', :maxlength=>2)
+      .row-fluid
+        .span12
+          .main-content
+            %p 
+              %u BBQ Pit Rental:
+              %br
+              =check_box_tag(:bbq_pit) 
+              I would like to rent the BBQ Pit for my event for $100 (holds up to a 150lb hog)
+            %p
+              %u Other:
+              %br
+              If you have any special requests or instructions please enter them here:
+              %br
+              =text_area_tag(:comments)
+            %p
+              %center=submit_tag('Submit Order', :class=>'btn-danger')

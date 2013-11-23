@@ -1,11 +1,12 @@
 // Place all the styles related to the Public controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
-  background-image:url(Paper_texture.png);
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-color:#f9f1e4;
+  background-image: url(Paper_texture.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #f9f1e4;
 }
 
 .main-content {
@@ -57,6 +58,7 @@ img.pic {
   padding: 10px 10px 11px;
   font-size: 14px;
   color: #ffffaa;
+  box-shadow: 0px;
 }
 
 div.navbar div.navbar-inner ul.nav a:hover {
@@ -65,4 +67,18 @@ div.navbar div.navbar-inner ul.nav a:hover {
 
 .order-form {
   border:3px dashed;
+}
+
+.flash-error {
+  background-color: #f2dede;
+  border: 1px #eed3d7 solid;
+  color: #b94a48;
+  padding: 15px;
+}
+
+.flash-notice {
+  background-color: #e6efc2;
+  border: 1px #c6d880 solid;
+  color: #264409;
+  padding: 15px;
 }

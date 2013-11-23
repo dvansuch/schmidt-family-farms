@@ -1,4 +1,6 @@
 SchmidtFamilyFarms::Application.routes.draw do
+  resources :customer_orders
+
   root 'public#index'
   get '/index'              => 'public#index' 
   get '/about'              => 'public#about'
@@ -9,11 +11,17 @@ SchmidtFamilyFarms::Application.routes.draw do
   get '/products/lamb'      => 'public#lamb'
   get '/services'           => 'public#services'
   get '/order'              => 'public#order'
+  post '/order'             => 'public#order_post'
   get '/news'               => 'public#news'
   get '/faq'                => 'public#faq'
   get '/contact'            => 'public#contact'
   get '/admin_login'        => 'public#admin_login'
+  post '/admin_login'       => 'public#admin_login_post'
+  get '/admin_logout'       => 'public#admin_logout'
 
+  get '/test'               => 'public#test'
+
+  get '/admin_index'        =>'admin#admin_index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

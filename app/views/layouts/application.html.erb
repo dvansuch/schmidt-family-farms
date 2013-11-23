@@ -44,13 +44,27 @@
             <li><a href="/contact">Contact Us</a>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li><a href="/admin_login">Login</a>
+            <% if session[:admin_id] == nil %>
+              <li><a href="/admin_login">Login</a>
+            <% else %>
+              <li><a href="/admin_index">Admin</a>
+              <li><a href="/admin_logout">Logout</a>
+            <% end %>
           </ul>
         </div>
       </div>
     </div>
     <div class="body">
+      <center>
+        <% flash.keys.each do |key| %>
+          <div class="flash flash-<%= key %>">
+            <%= flash[key] %>
+          </div>
+        <% end %>
+      </center>
+
       <%= yield %>
+      
     </div>
     <div class="footer">
       <div class="row">

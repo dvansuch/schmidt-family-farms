@@ -11,13 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109223100) do
+ActiveRecord::Schema.define(version: 20131122215621) do
 
-  create_table "admin", force: true do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "password_digest"
+  create_table "admins", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customer_orders", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "whole_beef"
+    t.integer  "half_beef"
+    t.integer  "qtr_beef"
+    t.integer  "bbq_hog"
+    t.integer  "half_hog"
+    t.integer  "whole_hog"
+    t.integer  "chickens"
+    t.integer  "lamb"
+    t.boolean  "bbq_pit"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

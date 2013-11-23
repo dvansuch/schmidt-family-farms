@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   host: localhost
-  database: schmidt_farms
+  database: schmidt_family_farms
   username: postgres
   password: postgres
   encoding: unicode
