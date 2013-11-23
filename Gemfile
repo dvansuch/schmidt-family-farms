@@ -59,3 +59,9 @@ gem 'rails_12factor', group: :production
 
 #installs haml for rails usage
 gem 'haml-rails'
+
+# for Rails form helpers
+gem 'actionpack', require: 'action_view'
+
+# for error_messages_for
+gem 'dynamic_form' 

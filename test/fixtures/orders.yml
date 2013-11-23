@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  whole_beef: 1
+  half_beef: 1
+  qtr_beef: 1
+  bbq_hog: 1
+  half_hog: 1
+  whole_hog: 1
+  chickens: 1
+  lamb: 1
+  bbq_pit: false
+  comments: MyString
+
+two:
+  whole_beef: 1
+  half_beef: 1
+  qtr_beef: 1
+  bbq_hog: 1
+  half_hog: 1
+  whole_hog: 1
+  chickens: 1
+  lamb: 1
+  bbq_pit: false
+  comments: MyString

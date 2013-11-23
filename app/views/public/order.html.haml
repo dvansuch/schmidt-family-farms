@@ -10,7 +10,7 @@
       .row-fluid
         .span6
           .main-content
-
+            =error_messages_for :order
             %form{:class=>'form-horizontal'}
               .control-group
                 =label_tag(:first_name, "First Name:", :class=>'control-label') 

@@ -41,37 +41,48 @@ class PublicController < ApplicationController
   end
 
   def order_post
+    @email = params[:email]
+    @existing_customer = Customer.where(email: @email).first
     if params[:commit] == "Submit Order"
-      order = CustomerOrder.new
-      order.first_name = params[:first_name].humanize
-      order.last_name = params[:last_name]
-      order.email = params[:email].downcase
-      order.phone = params[:phone]
-      order.address = params[:address]
-      order.city = params[:city].humanize
-      order.state = params[:state]
-      order.zip = params[:zip]
-      order.whole_beef = params[:whole_beef]
-      order.half_beef = params[:half_beef]
-      order.qtr_beef = params[:qtr_beef]
-      order.bbq_hog = params[:bbq_hog]
-      order.half_hog = params[:half_hog]
-      order.whole_hog = params[:whole_hog]
-      order.chickens = params[:chickens]
-      order.lamb = params[:lamb]
-      order.bbq_pit = params[:bbq_pit]
-      order.comments = params[:comments]
+      if @existing_customer.email != @email
+        @customer = Customer.new
+        @customer.first_name = params[:first_name].humanize
+        @customer.last_name = params[:last_name]
+        @customer.email = params[:email].downcase
+        @customer.phone = params[:phone]
+        @customer.address = params[:address]
+        @customer.city = params[:city].humanize
+        @customer.state = params[:state]
+        @customer.zip = params[:zip]
 
-      order.save!
+        @customer.save
+      elsif @existing_customer == @email
+        @existing_customer.id == CustomerOrder.customer_id
+      end
 
-      if order.save == true
+      @order = Order.new
+      @order.whole_beef = params[:whole_beef]
+      @order.half_beef = params[:half_beef]
+      @order.qtr_beef = params[:qtr_beef]
+      @order.bbq_hog = params[:bbq_hog]
+      @order.half_hog = params[:half_hog]
+      @order.whole_hog = params[:whole_hog]
+      @order.chickens = params[:chickens]
+      @order.lamb = params[:lamb]
+      @order.bbq_pit = params[:bbq_pit]
+      @order.comments = params[:comments]
+
+      @order.save
+
+      if @order.save == true
         flash[:notice] = "Thank you for your order! Someone will contact you shortly regarding your order."
         redirect_to "/order"
       else
-        flash[:error] = "Registration Failed"
+        flash[:error] = "Your Order Failed to Process. Please address the errors below and resubmit your Order!"
         render :order and return
       end
     end
+
   end
 
   def news
