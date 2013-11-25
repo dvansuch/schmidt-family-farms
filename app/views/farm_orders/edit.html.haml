@@ -1,0 +1,13 @@
+%h3 
+  %center
+    Editing Order
+    =@order.id 
+    For 
+    =@order.customer.first_name
+    =@order.customer.last_name
+
+= render 'form'
+
+= link_to 'Show', farm_order_path(@order)
+\|
+= link_to 'Back', farm_orders_path

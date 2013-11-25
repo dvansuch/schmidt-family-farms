@@ -1,0 +1,66 @@
+%p#notice= notice
+.container
+  .row-fluid
+    .span12
+      .main-content
+        .well
+          %center
+            %h3
+              Order 
+              =@order.id
+              Details
+            %h4 Customer Information:
+            %address
+              =@order.customer.first_name
+              =@order.customer.last_name
+              %br
+              =@order.customer.address
+              %br
+              =@order.customer.city
+              =@order.customer.state
+              =@order.customer.zip
+            %address
+              %strong Email:
+              %br
+              =@order.customer.email
+              %br
+              %strong Phone Number:
+              %br
+              =@order.customer.phone
+              %br
+            %table{:class => "table table-condensed"}
+              %tr
+                %th
+                %th{:colspan => 11} 
+                  %center Order
+                %th{:colspan => 3}
+              %tr
+                %th Order Date
+                %th Whole Beef
+                %th Half Beef
+                %th Quarter Beef
+                %th Whole Hog
+                %th Half Hog
+                %th BBQ Hog
+                %th Chickens
+                %th Lamb
+                %th BBQ Pit
+                %th Comments
+                %th Paid?
+                %th{:colspan => 3}
+              %tr
+                %td=@order.created_at
+                %td=@order.whole_beef
+                %td=@order.half_beef
+                %td=@order.qtr_beef
+                %td=@order.whole_hog
+                %td=@order.half_hog
+                %td=@order.bbq_hog
+                %td=@order.chickens
+                %td=@order.lamb
+                %td=@order.bbq_pit
+                %td=@order.comments
+                %td=@order.is_paid
+                %td= link_to 'Edit', edit_farm_order_path(@order)
+                %td= link_to 'Destroy', farm_order_path(@order), :method => :delete, :data => { :confirm => 'Are you sure?' }
+                %td= link_to 'Back', farm_orders_path

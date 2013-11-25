@@ -11,6 +11,8 @@ class AdminController < ApplicationController
   end
 
   def admin_index
+    @orders = Order.all
+
   	render :admin_index
   end
 end

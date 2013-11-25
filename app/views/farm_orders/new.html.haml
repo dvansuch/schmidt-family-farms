@@ -1,0 +1,85 @@
+= form_for(@order, url: farm_orders_path, method: "POST") do |f|
+  - if @order.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+
+  .container
+    .row-fluid
+      .span12
+        .main-content
+          %hr{:class=>'one'}
+          %h4 Please enter the quantity for each product you would like below. If you do not want a product please leave the box blank.
+    .row-fluid
+      .span4
+        .main-content
+          %p
+            %u Beef:
+            %form{:class=>'form-horizontal'}
+            .control-group
+              =f.label(:whole_beef, "Whole Beef:", :class=>'control-label')
+              .controls
+                =f.text_field(:whole_beef, :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =f.label(:half_beef, "Half Beef:", :class=>'control-label')
+              .controls
+                =f.text_field(:half_beef, :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =f.label(:qtr_beef, "Quarter Beef:", :class=>'control-label')
+              .controls
+                =f.text_field(:qtr_beef, :class=>'input-mini', :maxlength=>2)
+      .span4
+        .main-content
+          %p
+            %u Pork/Hogs:
+            .control-group
+              =f.label(:whole_hog, "Whole Hog:", :class=>'control-label')
+              .controls
+                =f.text_field(:whole_hog, :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =f.label(:half_hog, "Half Hog:", :class=>'control-label')
+              .controls
+                =f.text_field(:half_hog, :class=>'input-mini', :maxlength=>2)
+            .control-group
+              =f.label(:bbq_hog, "BBQ Pig:", :class=>'control-label')
+              .controls
+                =f.text_field(:bbq_hog, :class=>'input-mini', :maxlength=>2)
+      .span4
+        .main-content
+          %p 
+            %u Chickens:
+            .control-group
+              =f.label(:chickens, "Live Chickens:", :class=>'control-label')
+              .controls
+                =f.text_field(:chickens, :class=>'input-mini', :maxlength=>2)
+          %p
+            %u Lamb:
+            .control-group
+              =f.label(:lamb, "Lamb:", :class=>'control-label')
+              .controls
+                =f.text_field(:lamb, :class=>'input-mini', :maxlength=>2)
+    .row-fluid
+      .span12
+        .main-content
+          %p 
+            %u BBQ Pit Rental:
+            %br
+            =f.check_box(:bbq_pit) 
+            Yes, this customer ordered the BBQ Pit for $100
+          %p
+            %u Customer Comments/Special Requests:
+            %br
+            =f.text_area(:comments)
+          %h4
+            Has this customer paid?:
+          =f.check_box(:is_paid)
+          Check the box to mark as paid
+    .row-fluid
+      .span12
+        .main-content
+          .actions
+            = f.submit
+
+= link_to 'Back', farm_orders_path

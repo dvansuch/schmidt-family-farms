@@ -11,6 +11,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :lamb
       t.boolean :bbq_pit
       t.string :comments
+      t.integer :customer_id
 
       t.timestamps
     end

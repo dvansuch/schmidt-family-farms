@@ -1,5 +1,7 @@
 SchmidtFamilyFarms::Application.routes.draw do
-  resources :customer_orders
+  resources :farm_customers
+
+  resources :farm_orders
 
   root 'public#index'
   get '/index'              => 'public#index' 

@@ -1,0 +1,17 @@
+%h1 Listing farm_customers
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @farm_customers.each do |farm_customer|
+    %tr
+      %td= link_to 'Show', farm_customer
+      %td= link_to 'Edit', edit_farm_customer_path(farm_customer)
+      %td= link_to 'Destroy', farm_customer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Farm customer', new_farm_customer_path

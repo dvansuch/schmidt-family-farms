@@ -8,21 +8,38 @@
             =@admin.first_name
             to the Schmidt Family Farms Dashboard
   .row-fluid
-    .span3
-      .main-content
-        .well
-          %center
-            %u
-              %h4 New Orders
     .span6
       .main-content
         .well
           %center
             %u
-              %h4 Orders that Need to Be filled
-    .span3
+              %h4 Customer Data
+          %ul 
+            %li
+              %h5 
+                You have
+                
+    .span6
       .main-content
         .well
           %center
             %u
-              %h4 Orders Pending Payment
+              %h4 Your Orders At A Glance             
+          %ul
+            %li
+              %h5 
+                There are 
+                =@orders.count(:conditions => ["is_paid = ?", false])
+                orders that require payment
+            %li
+              %h5 
+                There are
+                =@orders.orders_this_month
+                orders this month
+            %li
+              %h5 
+                There were
+                =@orders.orders_last_month
+                orders last month
+          %center
+            %h5=link_to "View All Orders", farm_orders_path 

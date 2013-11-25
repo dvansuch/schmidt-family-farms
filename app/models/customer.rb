@@ -1,5 +1,5 @@
 class Customer < ActiveRecord::Base
-	has_and_belongs_to_many :orders, join_table: "customer_orders", class_name: "Order", foreign_key: "customer_id", association_foreign_key: "order_id"
+	has_many :orders, class_name: "Order", foreign_key: "customer_id"
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
