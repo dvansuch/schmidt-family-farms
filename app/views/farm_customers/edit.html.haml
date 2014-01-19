@@ -1,7 +1,13 @@
-%h1 Editing farm_customer
+%h3 
+  %center
+    Editing Customer Profile
+    =@customer.id 
+    For 
+    =@customer.first_name
+    =@customer.last_name
 
 = render 'form'
 
-= link_to 'Show', @farm_customer
+= link_to 'Show', farm_customer_path(@customer)
 \|
 = link_to 'Back', farm_customers_path

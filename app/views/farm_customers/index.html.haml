@@ -1,17 +1,43 @@
-%h1 Listing farm_customers
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @farm_customers.each do |farm_customer|
-    %tr
-      %td= link_to 'Show', farm_customer
-      %td= link_to 'Edit', edit_farm_customer_path(farm_customer)
-      %td= link_to 'Destroy', farm_customer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.container
+  .row-fluid
+    .span12
+      .main-content
+        .well
+          %center
+            %h2 Schmidt Family Farm Customers
+            %table{:class => "table table-condensed"}
+              %tr
+                %th{:colspan => 3} 
+                  %center Name
+                %th{:colspan => 7} 
+                  %center Contact Information
+              %tr
+                %th Cust ID 
+                %th # of Orders
+                %th Full Name
+                %th Address
+                %th Phone Number
+                %th Email
+              - @customers.order("last_name ASC").each do |farm_customer|
+                %tr
+                  %td=farm_customer.id
+                  %td=farm_customer.orders.count
+                  %td
+                    =farm_customer.first_name
+                    =farm_customer.last_name
+                  %td
+                    %address
+                      =farm_customer.address
+                      %br
+                      =farm_customer.city
+                      =farm_customer.state
+                      =farm_customer.zip
+                  %td=farm_customer.phone
+                  %td=farm_customer.email
+                  %td= link_to 'Show', farm_customer_path(farm_customer)
+                  %td= link_to 'Edit', edit_farm_customer_path(farm_customer)
+                  %td= link_to 'Destroy', farm_customer_path(farm_customer), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Farm customer', new_farm_customer_path
+= link_to 'New Customer', new_farm_customer_path(@customer)

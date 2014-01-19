@@ -62,7 +62,7 @@ class PublicController < ApplicationController
       else 
         @customer = Customer.new
         @customer.first_name = params[:first_name].humanize
-        @customer.last_name = params[:last_name]
+        @customer.last_name = params[:last_name].humanize
         @customer.email = params[:email].downcase
         @customer.phone = params[:phone]
         @customer.address = params[:address]

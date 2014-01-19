@@ -14,7 +14,7 @@ class FarmOrdersController < ApplicationController
   # GET /farm_orders
   # GET /farm_orders.json
   def index
-    @orders = Order.all
+    @orders = Order.all(:order => "created_at desc")
   end
 
   # GET /farm_orders/1
@@ -36,7 +36,7 @@ class FarmOrdersController < ApplicationController
   # POST /farm_orders
   # POST /farm_orders.json
   def create
-    @order = Order.new(order_params)
+    @order = Order.new(farm_order_params)
 
     respond_to do |format|
       if @farm_order.save

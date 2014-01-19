@@ -1,6 +1,46 @@
 %p#notice= notice
+.container
+  .row-fluid
+    .span12
+      .main-content
+        .well
+          %center
+            %h3
+              Customer 
+              =@customer.id
+              Details
+          %h4 Customer Information:
+          %h5
+            =@customer.first_name
+            =@customer.last_name
+          %address
+            %strong Address:
+            %br
+            =@customer.address
+            %br
+            =@customer.city
+            =@customer.state
+            =@customer.zip
+          %address
+            %strong Email:
+            %br
+            =@customer.email
+          %address
+            %strong Phone Number:
+            %br
+            =@customer.phone
+          %h4 Order Information:
+          %address
+            %strong
+              =@customer.first_name
+              has been a customer since:
+            =@customer.created_at.strftime("%B, %Y")
 
+          %address
+            %strong Number of Customer Orders: 
+            =@customer.orders.count
+                      
 
-= link_to 'Edit', edit_farm_customer_path(@farm_customer)
+= link_to 'Edit', edit_farm_customer_path(@customer)
 \|
 = link_to 'Back', farm_customers_path

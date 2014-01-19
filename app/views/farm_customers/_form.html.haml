@@ -1,10 +1,45 @@
-= form_for @farm_customer do |f|
-  - if @farm_customer.errors.any?
+= form_for(@customer, url: farm_customer_path, method: "PATCH") do |f|
+  - if @customer.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@farm_customer.errors.count, "error")} prohibited this farm_customer from being saved:"
+      %h2= "#{pluralize(@customer.errors.count, "error")} prohibited this farm_customer from being saved:"
       %ul
-        - @farm_customer.errors.full_messages.each do |msg|
+        - @customer.errors.full_messages.each do |msg|
           %li= msg
-
-  .actions
-    = f.submit 'Save'
+  .row-fluid
+    .span6
+      .main-content
+        %form{:class=>'form-horizontal'}
+          .control-group
+            =f.label(:first_name, "First Name:", :class=>'control-label') 
+            .controls
+              =f.text_field(:first_name)
+          .control-group
+            =f.label(:last_name, "Last Name:", :class=>'control-label')
+            .controls
+              =f.text_field(:last_name)
+          .control-group
+            =f.label(:email, "Contact Email:", :class=>'control-label')
+            .controls
+              =f.text_field(:email)
+          .control-group
+            =f.label(:phone, "Contact Phone Number:", :class=>'control-label')
+            .controls
+              =f.text_field(:phone)
+          .control-group
+            =f.label(:address, "Street Addess:", :class=>'control-label')
+            .controls
+              =f.text_field(:address)
+          .control-group
+            =f.label(:city, "City:", :class=>'control-label')
+            .controls
+              =f.text_field(:city)
+          .control-group
+            =f.label(:state, "State:", :class=>'control-label')
+            .controls
+              =f.select :state, options_for_select(us_states)
+          .control-group
+            =f.label(:zip, "Zip Code:", :class=>'control-label')
+            .controls
+              =f.text_field(:zip)
+      .actions
+        = f.submit
