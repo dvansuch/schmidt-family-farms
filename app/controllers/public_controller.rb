@@ -83,6 +83,13 @@ class PublicController < ApplicationController
         @order.save
         if @order.save == true
           flash[:notice] = "Thank you for your order! Someone will contact you shortly regarding your order."
+
+          # Pony.mail(
+          #   to:      @order.customer.email,
+          #   subject: "Thank you For Ordering from Schmidt Family Farms",
+          #   body:    "Thank you for your Order! Someone will be contacting you shortly to finalize your order and payment information. We provide only the best quality meat for our customers."
+          # )
+
           redirect_to '/order'
         else
           flash[:error] = "Your Order Failed to Process. Please address the errors below and resubmit your Order!"

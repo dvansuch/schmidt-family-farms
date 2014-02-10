@@ -5,7 +5,7 @@ class Customer < ActiveRecord::Base
 	validates :last_name, presence: true
 	validates :email, presence: true, :format => /@/
 	validates :phone, presence:true, length: { maximum: 13 }
-	validates :address, presence:true, length: { minimum: 11}
+	validates :address, presence:true, length: { minimum: 8}
 	validates :city, presence: true
 	validates :state, presence: true
 	validates :zip, presence: true, numericality: {only_integer: true }, length: { is: 5 } 

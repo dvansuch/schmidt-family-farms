@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
+# Use postgres as the database for Active Record
 # Changed to postgres server db for active record
 gem 'pg'
 
@@ -65,3 +65,6 @@ gem 'actionpack', require: 'action_view'
 
 # for error_messages_for
 gem 'dynamic_form' 
+
+#pony for email setup
+gem 'pony'
