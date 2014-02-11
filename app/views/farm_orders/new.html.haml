@@ -73,6 +73,10 @@
             %br
             =f.text_area(:comments)
           %h4
+            Total Order Amount:
+          =f.number_field(:total, :value => 0.00)
+          Enter the dollar amount of the order. 
+          %h4
             Has this customer paid?:
           =f.check_box(:is_paid)
           Check the box to mark as paid

@@ -53,7 +53,6 @@ class FarmOrdersController < ApplicationController
   # PATCH/PUT /farm_orders/1.json
   def update
     @order = Order.find(params[:id])
-
     respond_to do |format|
       if @order.update(farm_order_params)
         format.html { redirect_to edit_farm_order_path, notice: 'Farm order was successfully updated.' }
@@ -83,6 +82,6 @@ class FarmOrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def farm_order_params
-      params[:order].permit(:whole_beef, :half_beef, :qtr_beef, :whole_hog, :half_hog, :bbq_hog, :chickens, :lamb, :bbq_pit, :comments, :is_paid, :updated_at)
+      params[:order].permit(:whole_beef, :half_beef, :qtr_beef, :whole_hog, :half_hog, :bbq_hog, :chickens, :lamb, :bbq_pit, :comments, :is_paid, :total, :updated_at)
     end
 end
