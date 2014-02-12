@@ -49,7 +49,7 @@ gem 'unicorn'
 gem 'rake_db_dump'
 
 #utlizes bootstrap without having to download it myself
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 2.2.2.0'
 
 #this pushes and pull db's on heroku
 gem 'taps' 
