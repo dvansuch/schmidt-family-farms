@@ -89,11 +89,11 @@ class PublicController < ApplicationController
             to:      "#{@customer.email}",
             subject: "Thank you For Ordering from Schmidt Family Farms",
             headers: { "Content-Type" => "text/html" },
-            body:    "<h3>Thank you for your Order!</h3> <p>We provide only the best quality meat for our customers and we are happy you chose us. Someone will be contacting you shortly to finalize your order and payment information. We accept Visa and Master</p>"
+            body:    "<h3>Thank you for your Order!</h3> <p>We provide only the best quality meat for our customers and we are happy you chose us. Someone will be contacting you shortly to finalize your order and payment information.</p>"
           )
 
           Pony.mail(
-            to: "schmidtfarms2009@gmail.com",
+            to: "danielles.travels@gmail.com",
             subject: "New Order",
             headers: { "Content-Type" => "text/html" },
             body: "<h2>You have a new Order!</h2><p>#{@customer.first_name} #{@customer.last_name}
@@ -103,18 +103,22 @@ class PublicController < ApplicationController
               <br>#{@customer.city}, #{@customer.state} #{@customer.zip}
               </p>
               <p> Order information 
-              <%= foreach 
-              <ul><li>Whole Beef: #{@order.whole_beef}
-              <li>Half Beef: #{@order.half_beef}
-              <li>Quarter Beef: #{@order.qtr_beef}
-              <li>BBQ Hog: #{@order.bbq_hog}
-              <li>Half Hog: #{@order.half_hog}
-              <li>Whole Hog: #{@order.whole_hog}
-              <li>Chickens: #{@order.chickens}
-              <li>Lamb: #{@order.lamb}
-              <li>BBQ Pit: #{@order.bbq_pit}
-              <li>Comments: #{@order.comments}
-              </ul>
+              <table>
+                <tr><center>Order Details</center></tr>
+                <tr><th>Order Date</th><td>2014-02-11 16:36:32 UTC</td></tr>
+                <tr><th>Whole Beef</th><td>#{@order.whole_beef}</td></tr>
+                <tr><th>Half Beef</th><td>#{@order.half_beef}</td></tr>
+                <tr><th>Quarter Beef</th><td>#{@order.qtr_beef}</td></tr>
+                <tr><th>Whole Hog</th><td>#{@order.whole_hog}</td></tr>
+                <tr><th>Half Hog</th><td>#{@order.half_hog}</td></tr>
+                <tr><th>BBQ Hog</th><td>#{@order.bbq_hog}</td></tr>
+                <tr><th>Chickens</th><td>#{@order.chickens}</td></tr>
+                <tr><th>Lamb</th><td>#{@order.lamb}</td></tr>
+                <tr><th>BBQ Pit</th><td>#{@order.bbq_pit}</td></tr>
+                <tr><th>Comments</th><td>#{@order.comments}</td></tr>
+                <tr><th>Total</th><td>#{@order.total}</td></tr>
+                <tr><th>Paid?</th><td>#{@order.is_paid}</td></tr>
+              </table>
               </p>"
           )
           redirect_to '/order'

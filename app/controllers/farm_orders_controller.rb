@@ -23,6 +23,58 @@ class FarmOrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  # def receipt
+  #   @order = Order.find(params[:id])
+  #   if param[:commit] == 'Send A Receipt'
+  #     Pony.mail(
+  #       to:      "danielles.travels@gmail.com",
+  #       subject: "Schmidt Family Farms Receipt - Thank You",
+  #       headers: { "Content-Type" => "text/html" },
+  #       body:    "<h4>Customer Information:</h4>
+  #             <address>
+  #               #{@order.customer.first_name}
+  #               #{@order.customer.last_name}
+  #               <br>
+  #               #{@order.customer.address}
+  #               <br>
+  #               #{@order.customer.city}
+  #               #{@order.customer.state}
+  #               #{@order.customer.zip}
+  #             </address>
+  #             <address>
+  #               <strong>Email:</strong>
+  #               <br>
+  #               #{@order.customer.email}
+  #               <br>
+  #               <strong>Phone Number:</strong>
+  #               <br>
+  #               #{@order.customer.phone}
+  #               <br>
+  #             </address>
+  #             <table>
+  #               <tr><center>Your Order Details</center></tr>
+  #               <tr><th>Order Date</th><td>2014-02-11 16:36:32 UTC</td></tr>
+  #               <tr><th>Whole Beef</th><td>#{@order.whole_beef}</td></tr>
+  #               <tr><th>Half Beef</th><td>#{@order.half_beef}</td></tr>
+  #               <tr><th>Quarter Beef</th><td>#{@order.qtr_beef}</td></tr>
+  #               <tr><th>Whole Hog</th><td>#{@order.whole_hog}</td></tr>
+  #               <tr><th>Half Hog</th><td>#{@order.half_hog}</td></tr>
+  #               <tr><th>BBQ Hog</th><td>#{@order.bbq_hog}</td></tr>
+  #               <tr><th>Chickens</th><td>#{@order.chickens}</td></tr>
+  #               <tr><th>Lamb</th><td>#{@order.lamb}</td></tr>
+  #               <tr><th>BBQ Pit</th><td>#{@order.bbq_pit}</td></tr>
+  #               <tr><th>Comments</th><td>#{@order.comments}</td></tr>
+  #               <tr><th>Total</th><td>#{@order.total}</td></tr>
+  #               <tr><th>Paid?</th><td>#{@order.is_paid}</td></tr>
+  #             </table>
+  #             <p>If any of your contact information is out of date please respond to this email letting us know of any changes. If you have questions about your order we are happy to answer any questions you may have.</p>
+  #             <p>Thank your for ordering from Schmidt Family Farms! We appreciate your business and look forward to doing business again in the future!</p>"
+  #     )
+  #     flash[:notice] = "A Receipt was emailed to #{@order.customer.email}."
+  #     redirect_to '/farm_order'  
+  #   end
+  # end
+
   # GET /farm_orders/new
   def new
     redirect_to "/order"
@@ -37,7 +89,6 @@ class FarmOrdersController < ApplicationController
   # POST /farm_orders.json
   def create
     @order = Order.new(farm_order_params)
-
     respond_to do |format|
       if @farm_order.save
         format.html { redirect_to @farm_order, notice: 'Farm order was successfully created.' }
@@ -81,6 +132,7 @@ class FarmOrdersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def farm_order_params
       params[:order].permit(:whole_beef, :half_beef, :qtr_beef, :whole_hog, :half_hog, :bbq_hog, :chickens, :lamb, :bbq_pit, :comments, :is_paid, :total, :updated_at)
     end
