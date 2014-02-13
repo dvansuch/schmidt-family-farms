@@ -93,7 +93,7 @@ class PublicController < ApplicationController
           )
 
           Pony.mail(
-            to: "danielles.travels@gmail.com",
+            to: "schmidtfarms2009@gmail.com",
             subject: "New Order",
             headers: { "Content-Type" => "text/html" },
             body: "<h2>You have a new Order!</h2><p>#{@customer.first_name} #{@customer.last_name}
@@ -102,9 +102,8 @@ class PublicController < ApplicationController
               <br>#{@customer.address}
               <br>#{@customer.city}, #{@customer.state} #{@customer.zip}
               </p>
-              <p> Order information 
+              <br>Order Details
               <table>
-                <tr><center>Order Details</center></tr>
                 <tr><th>Order Date</th><td>2014-02-11 16:36:32 UTC</td></tr>
                 <tr><th>Whole Beef</th><td>#{@order.whole_beef}</td></tr>
                 <tr><th>Half Beef</th><td>#{@order.half_beef}</td></tr>
